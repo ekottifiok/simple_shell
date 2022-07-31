@@ -1,18 +1,18 @@
 #include "main.h"
 
 /**
- * free_history - frees the content of the history
+ * free_list - frees the content of the history
  *
  * @head: the pointer of the haed
  */
-void free_history(history_type *head)
+void free_list(list_type *head)
 {
-	history_type *buffer;
+	list_type *buffer;
 
 	while (head)
 	{
 		buffer = head->next;
-		free(head->command);
+		free(head->string);
 		free(head);
 		head = buffer;
 	}
