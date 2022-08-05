@@ -15,7 +15,7 @@ size_t print_list(list_type *h)
 		if (!h->string)
 			printf("[0] (nil)");
 		else
-			printf("[%ld] %s", iteration, h->string);
+			printf("[%ld] %s\n", iteration, h->string);
 		h = h->next;
 		iteration++;
 	}

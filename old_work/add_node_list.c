@@ -30,6 +30,6 @@ list_type *add_node_list(list_type **head, char *string)
 		}
 		buffer->next = newNode;
 	}
-	
+
 	return (*head);
 }
