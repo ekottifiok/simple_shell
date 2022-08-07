@@ -22,29 +22,45 @@
 #include <signal.h>
 
 /* custom definitions */
-#define MAX_SIZE_ARG 16
-#define MAX_SIZE_CMD 256
-
+#define STR_TO_INT(val) (val - 48)
+#define INT_TO_STR(val) (val + 48)
 
 /* custom data type */
+typedef struct list_s
+{
+	int value;
+	struct list_s *next;
+} list_t;
+
 typedef struct
 {
 	char *keyword;
-	int (*op)(char *);
+	int (*op)(char **, char *, list_t **);
 } execute_functions;
 
 /* custom standard library */
 void *_realloc(void *, unsigned int , unsigned int );
+int _pow_recursion(int , int );
 
 /* new functions */
 int prompt(char **);
 int execute_command(char *[], char **);
-int execute_decision(char *, char **);
+int execute_decision(char *, char **, list_t **);
 char **parse_string(char *, char *);
-void free_double_pointer(char **, size_t );
+int free_double_pointer(char **);
 char *get_env_variable(char **, char *);
 char *complete_path(char *, char **);
-int (*get_builtin_function(char *))(char *);
-int change_directory(char *);
+int (*get_builtin_function(char *))(char **, char *, list_t **);
+int set_env_variable(char **, char *, char *, list_t **);
+int change_directory(char **, char *, list_t **);
+int print_working_directory(char **, char *, list_t **);
+int echo(char **, char *, list_t **);
+int help(char **, char *, list_t **);
+int print_double_pointer(char **double_ptr);
+int exit_command(char *);
+char **copy_double_pointer(char **, int );
+int print_env(char **, char *, list_t **);
+list_t *add_node(list_t **head, int value);
+void free_list(list_t *head, char **);
 
 #endif

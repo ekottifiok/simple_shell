@@ -4,12 +4,17 @@
 
 #include "shell.h"
 
-void free_double_pointer(char **ptr, size_t ptr_size)
+int free_double_pointer(char **db_ptr)
 {
-    size_t iteration;
+	unsigned int size;
+	size_t iteration;
 
-    for (iteration = 0; iteration < ptr_size; iteration++)
-        free(ptr[iteration]);
+	for (size = 0; db_ptr[size]; size++)
+		;
 
-    free(ptr);
+	for (iteration = 0; iteration < size; iteration++)
+		free(db_ptr[iteration]);
+
+	free(db_ptr);
+	return (0);
 }
