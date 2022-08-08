@@ -1,9 +1,10 @@
-//
-// Created by ifiokekott on 8/5/22.
-//
-
 #include "shell.h"
 
+/**
+ * exit_command - converts the string that carries the exit command
+ * @string: the string that carries the exit status
+ * Return: returns the value of the exit status
+ */
 int exit_command(char *string)
 {
 	unsigned int iteration1, result, iteration2;

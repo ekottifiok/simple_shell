@@ -1,9 +1,15 @@
-//
-// Created by ifiokekott on 8/4/22.
-//
 #include "shell.h"
 
-int main(int ac __attribute__((unused)), char **av __attribute__((unused)), char **env)
+/**
+ * main - entrypoint to the whole shell
+ * @ac: number of variable inputs
+ * @av: the pointer to a pointer holding the variable input
+ * @env: the pointer to a pointer holding the environment variables
+ * Return: 0 for success
+ */
+int main(int ac __attribute__((unused)),
+		 char **av __attribute__((unused)),
+		 char **env)
 {
 	char *user_input = NULL, *buffer, *buffer2, **history = NULL, *delimiter = " ";
 	size_t max_len = BUFSIZ, iteration = 0;

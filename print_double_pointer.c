@@ -1,8 +1,11 @@
-//
-// Created by ifiokekott on 8/6/22.
-//
 #include "shell.h"
 
+/**
+ * print_double_pointer - prints out the contents of a double pointer
+ * with iteration starting with zero
+ * @double_ptr: input double pointer
+ * Return: 0 is success;
+ */
 int print_double_pointer(char **double_ptr)
 {
 	unsigned int iteration;

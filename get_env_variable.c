@@ -1,25 +1,28 @@
-//
-// Created by ifiokekott on 8/5/22.
-//
-
 #include "shell.h"
 
-char *get_env_variable(char **environment, char *variable)
+/**
+ * get_env_variable - takes in a var and returns the result
+ * 			from the environment
+ * @env: the environment variable
+ * @var: takes in variable that needs to be found
+ * @return
+ */
+char *get_env_variable(char **env, char *var)
 {
-	unsigned int iteration, size_env;
-	char *path = NULL, *buffer, *delimiter = "=", *result;
+	unsigned int iter, size_env;
+	char *path = NULL, *buffer, *delim = "=", *result;
 
-	for (size_env = 0; environment[size_env]; size_env++)
+	for (size_env = 0; env[size_env]; size_env++)
 		;
 
-	for (iteration = 0; strncmp(environment[iteration], variable, strlen(variable)); iteration++)
+	for (iter = 0; strncmp(env[iter], var, strlen(var)); iter++)
 	{
-		if ((iteration+1) == size_env)
+		if ((iter + 1) == size_env)
 			return (NULL);
 	}
-	buffer = strdup(environment[iteration]);
-	path = strtok(buffer, delimiter);
-	path = strtok(NULL, delimiter);
+	buffer = strdup(env[iter]);
+	path = strtok(buffer, delim);
+	path = strtok(NULL, delim);
 	result = strdup(path);
 	free(buffer);
 	return (result);

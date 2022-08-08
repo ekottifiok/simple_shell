@@ -1,11 +1,8 @@
-//
-// Created by ifiokekott on 8/7/22.
-//
 #include "shell.h"
 
 /**
  * free_list - frees the content of the list
- *
+ * @env: the environment variable
  * @head: the pointer of the head
  */
 void free_list(list_t *head, char **env)

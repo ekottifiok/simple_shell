@@ -1,8 +1,12 @@
-//
-// Created by ifiokekott on 8/5/22.
-//
 #include "shell.h"
 
+/**
+ * execute_decision - decides what action to be carried out
+ * @string: the user input string
+ * @environment: environment variable
+ * @head: the head list carries the changes to environment
+ * Return: 0 success
+ */
 int execute_decision(char *string, char **environment, list_t **head)
 {
 	unsigned int iter;

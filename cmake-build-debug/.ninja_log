@@ -47,3 +47,12 @@
 61	78	1659838307890328853	simple_shell	190c1ac60b71bab5
 0	47	1659838572191751498	CMakeFiles/simple_shell.dir/shell.c.o	4af367962bf29fe3
 47	74	1659838572219751225	simple_shell	190c1ac60b71bab5
+2	1020	1659869421615947476	CMakeFiles/simple_shell.dir/get_env_variable.c.o	623d6d599ce0cedf
+1	1022	1659869421615947476	CMakeFiles/simple_shell.dir/prompt.c.o	6fe1e883b570f586
+2	1023	1659869421615947476	CMakeFiles/simple_shell.dir/parse_string.c.o	42142e1b9b0f63c7
+1023	1084	1659869421679947474	CMakeFiles/simple_shell.dir/print_double_pointer.c.o	f89cad871f6fffff
+1022	1094	1659869421687947474	CMakeFiles/simple_shell.dir/print_working_directory.c.o	ae3e8117e553573d
+1022	1095	1659869421691947474	CMakeFiles/simple_shell.dir/help.c.o	54ebc8f509e0f2f4
+1084	1112	1659869421707947473	CMakeFiles/simple_shell.dir/print_env.c.o	694a5cb451e3eded
+1094	1119	1659869421711947473	CMakeFiles/simple_shell.dir/free_list.c.o	e9df85b40539a97a
+1119	1562	1659869422155947459	simple_shell	190c1ac60b71bab5

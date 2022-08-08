@@ -4,6 +4,10 @@
 
 #include "shell.h"
 
+/**
+ * get_builtin_function - gets builtin functions
+ * @string: the string to be compared
+ */
 int (*get_builtin_function(char *string))(char **, char *, list_t **)
 {
 	char *first_word, *delimiter = " ", *buffer;

@@ -1,11 +1,21 @@
 #include "shell.h"
 
+/**
+ * parse_string - takes in a string and parses it into bits.
+ * EXAMPLE: input string "Hello World I am fine"
+ * RESULT:	"Hello", "World", "I", "am", "fine"
+ * @str: input string
+ * @delimiter: what separates a string separate
+ * Return: a pointer to a pointer of the result
+ */
 char **parse_string(char *str, char *delimiter)
 {
 	int iteration, no_delimiter, k;
 	char **parsed, *buffer = strdup(str);
 
-	//    calculates the number of tokens for the string
+	/*
+	 * calculates the number of tokens for the string
+	 */
 	for (iteration = 0, no_delimiter = 0, k = 0; str[iteration]; iteration++)
 	{
 		if (str[iteration] == *delimiter)
