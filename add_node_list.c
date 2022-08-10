@@ -13,7 +13,6 @@
 list_t *add_node(list_t **head, int value)
 {
 	list_t *newNode;
-	size_t strLen;
 
 	newNode = malloc(sizeof(list_t));
 	if (!newNode)

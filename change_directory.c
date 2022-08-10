@@ -36,7 +36,7 @@ int change_directory(char **env, char *string, list_t **head)
 	if (chdir(path))
 	{
 		printf("bash: cd: %s: No such file or directory\n", path);
-		return (0);
+		return (1);
 	}
 	set_env_variable(env, "OLDPWD", old_path, head);
 	if (strcmp(path, "/") && *path != '/')

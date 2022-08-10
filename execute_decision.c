@@ -7,7 +7,7 @@
  * @head: the head list carries the changes to environment
  * Return: 0 success
  */
-int execute_decision(char *string, char **environment, list_t **head)
+int execute_decision(char *string, char **environment, list_t ***head)
 {
 	unsigned int iter;
 	struct stat st;
@@ -29,7 +29,7 @@ int execute_decision(char *string, char **environment, list_t **head)
 	{
 		if (builtin_commands = get_builtin_function(string))
 		{
-			if (!builtin_commands(environment, string, head))
+			if (!builtin_commands(environment, string, *head))
 				return (0);
 		}
 		else if (complete_string = complete_path(string, environment))

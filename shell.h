@@ -26,6 +26,12 @@
 #define INT_TO_STR(val) (val + 48)
 
 /* custom data type */
+typedef struct list
+{
+	char *string;
+	int add_or;
+	struct list *next;
+} user_input_type;
 typedef struct list_s
 {
 	int value;
@@ -43,9 +49,11 @@ void *_realloc(void *, unsigned int , unsigned int );
 int _pow_recursion(int , int );
 
 /* new functions */
+int sub_main(char **, int *, char ***, list_t **);
+int add_input_history(char ****, char *);
 int prompt(char **);
 int execute_command(char *[], char **);
-int execute_decision(char *, char **, list_t **);
+int execute_decision(char *, char **, list_t ***);
 char **parse_string(char *, char *);
 int free_double_pointer(char **);
 char *get_env_variable(char **, char *);
@@ -62,5 +70,10 @@ char **copy_double_pointer(char **, int );
 int print_env(char **, char *, list_t **);
 list_t *add_node(list_t **head, int value);
 void free_list(list_t *head, char **);
+int *find_control(char *user_input);
+user_input_type *add_input_string(user_input_type **, int , char *);
+user_input_type *parse_multiline(char **);
+void free_user_input_type(user_input_type *head);
+ssize_t __getline(char **, size_t *, FILE *);
 
 #endif

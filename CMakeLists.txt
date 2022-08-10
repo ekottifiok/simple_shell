@@ -24,4 +24,4 @@ add_executable(simple_shell
         print_working_directory.c
         help.c
         print_double_pointer.c
-        _pow_recursion.c copy_double_pointer.c print_env.c add_node_list.c free_list.c)
+        _pow_recursion.c copy_double_pointer.c print_env.c add_node_list.c free_list.c find_control.c parse_multiline.c add_input_string.c free_user_input_type.c __getline.c sub_main.c add_input_history.c)
