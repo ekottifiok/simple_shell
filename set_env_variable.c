@@ -12,7 +12,6 @@ int set_env_variable(char **environment, char *variable,
 					 char *value, list_t **head)
 {
 	unsigned int iteration, size_env;
-	char *modified_value;
 
 	for (size_env = 0; environment[size_env]; size_env++)
 		;

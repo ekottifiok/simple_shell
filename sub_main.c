@@ -11,8 +11,8 @@
 int sub_main(char **env, int *exit_status, char ***history, list_t **head)
 {
 	user_input_type *input, *input_buffer;
-	char *buffer, *buffer2, *delimiter = " ";
-	unsigned int iter2, iteration;
+	char *buffer;
+	unsigned int iter2;
 	int exit_continue;
 
 	input = parse_multiline(env);

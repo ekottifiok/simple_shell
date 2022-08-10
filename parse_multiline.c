@@ -24,7 +24,7 @@ char *control_converter(int specifier)
  */
 user_input_type *parse_multiline(char **env)
 {
-	char *user_input = NULL, *buffer1, *buffer2, *parsed_str, *delim;
+	char *user_input = NULL, *parsed_str, *delim;
 	size_t max_len = BUFSIZ, iter1 = 0;
 	int *control_values;
 	user_input_type *list = NULL;
