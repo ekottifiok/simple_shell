@@ -1,8 +1,11 @@
-//
-// Created by ifiokekott on 8/4/22.
-//
 #include "shell.h"
 
+/**
+ * execute_command - executes the command
+ * @arguments: an array of arguments
+ * @environment: the global environment variable
+ * Return: 0 success and 1 failure
+ */
 int execute_command(char *arguments[], char **environment)
 {
 	pid_t pid;

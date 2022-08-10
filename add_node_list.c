@@ -1,13 +1,10 @@
-//
-// Created by ifiokekott on 8/7/22.
-//
 #include "shell.h"
 
 /**
  * add_node - adds a node pointer
  *
  * @head: the pointer to the head pointer
- * @str: the new str
+ * @value: the new str
  * Return: list_t*
  */
 list_t *add_node(list_t **head, int value)

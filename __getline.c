@@ -1,5 +1,12 @@
 #include "shell.h"
 
+/**
+ * __getline - simple implementation of the popular getline C
+ * @lineptr: the pointer that carries the string to be updated
+ * @n: the size of the buffer
+ * @stream: the source the input
+ * Return: returns a ssize_t of the
+ */
 ssize_t __getline(char **lineptr, size_t *n, FILE *stream)
 {
 	size_t count;

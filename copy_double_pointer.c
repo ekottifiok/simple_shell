@@ -1,8 +1,11 @@
-//
-// Created by ifiokekott on 8/6/22.
-//
 #include "shell.h"
 
+/**
+ * copy_double_pointer - copies a double pointer to another pointer
+ * @double_pointer: input double pointer
+ * @plus_size: size of pointer
+ * Return: returns a new double pointer
+ */
 char **copy_double_pointer(char **double_pointer, int plus_size)
 {
 	size_t size, iter;

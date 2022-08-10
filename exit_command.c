@@ -22,7 +22,8 @@ int exit_command(char *string)
 		{
 			if (!(str_buf2[iteration2] >= '0' && str_buf2[iteration2] <= '9'))
 				return (0);
-			result += STR_TO_INT(str_buf2[iteration2]) * _pow_recursion(10, --iteration1);
+			result += STR_TO_INT(str_buf2[iteration2])
+					* _pow_recursion(10, --iteration1);
 		}
 	}
 	return (result);

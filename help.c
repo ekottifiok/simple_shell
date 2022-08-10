@@ -7,7 +7,10 @@
  * @head: carries the location of the new additions to the env
  * Return: 0 for success
  */
-int help(char **env __attribute__((unused)), char *string __attribute__((unused)), list_t **head __attribute__((unused)))
+int help(char **env __attribute__((unused)),
+		 char *string __attribute__((unused)),
+		 list_t **head
+		 )
 {
 	puts("I'm here to help you.");
 	puts("How are you doing today?");

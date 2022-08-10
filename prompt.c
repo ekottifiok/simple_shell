@@ -8,6 +8,7 @@
 int prompt(char **env)
 {
 	char *buffer = get_env_variable(env, "PWD");
+
 	printf("%s $ ", buffer);
 	free(buffer);
 	return (0);

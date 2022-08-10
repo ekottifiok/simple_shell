@@ -1,5 +1,27 @@
 #include "shell.h"
 
+/**
+ * control_converter - finds the right control with a specifier as input
+ * @specifier: integer specifier
+ * Return: returns the specifier
+ */
+char *control_converter(int specifier)
+{
+	if (specifier == 1)
+		return ("&&");
+	else if (specifier == -1)
+		return ("||");
+	else if (specifier == 2)
+		return (";");
+	return (NULL);
+}
+
+/**
+ * parse_multiline - parses the multiline
+ * @env: global environment variable
+ * Return: the user_input_type
+ * a custom data type carrying the input and control
+ */
 user_input_type *parse_multiline(char **env)
 {
 	char *user_input = NULL, *buffer1, *buffer2, *parsed_str, *delim;
@@ -14,10 +36,7 @@ user_input_type *parse_multiline(char **env)
 	control_values = find_control(user_input);
 	if (*control_values)
 	{
-		if (*control_values == 1)
-			delim = "&&";
-		else if (*control_values == -1)
-			delim = "||";
+		delim = control_converter(*control_values);
 		parsed_str = strtok(user_input, delim);
 		while (parsed_str)
 		{

@@ -1,5 +1,10 @@
 #include "shell.h"
 
+/**
+ * find_control - find which control is in the text
+ * @user_input: the users input
+ * Return: the control in malloc
+ */
 int *find_control(char *user_input)
 {
 	unsigned int iter1, iter2;
@@ -21,6 +26,8 @@ int *find_control(char *user_input)
 				control[iter2++] = 1;
 			else if (!strcmp(test, " || "))
 				control[iter2++] = -1;
+			else if (!strcmp(test, " ; "))
+				control[iter2++] = 2;
 			control[iter2] = 0;
 		}
 	}

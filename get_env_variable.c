@@ -2,10 +2,10 @@
 
 /**
  * get_env_variable - takes in a var and returns the result
- * 			from the environment
+ * from the environment
  * @env: the environment variable
  * @var: takes in variable that needs to be found
- * @return
+ * Return: returns the result of the environment variable
  */
 char *get_env_variable(char **env, char *var)
 {

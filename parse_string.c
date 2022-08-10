@@ -11,7 +11,7 @@
 char **parse_string(char *str, char *delimiter)
 {
 	int iteration, no_delimiter, k;
-	char **parsed, *buffer = strdup(str);
+	char **parsed, *buffer = strdup(str), *token;
 
 	/*
 	 * calculates the number of tokens for the string
@@ -25,7 +25,7 @@ char **parse_string(char *str, char *delimiter)
 	parsed = malloc(sizeof(char *) * (no_delimiter + 2));
 	if (parsed == NULL)
 		return (NULL);
-	char *token = strtok(buffer, delimiter);
+	token = strtok(buffer, delimiter);
 	while (token)
 	{
 		parsed[k] = malloc((strlen(token) + 1));

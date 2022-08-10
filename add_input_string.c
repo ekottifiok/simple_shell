@@ -4,10 +4,12 @@
  * add_input_string - adds a node pointer
  *
  * @head: the pointer to the head pointer
- * @str: the new str
+ * @control: the control specified
+ * @input: the new str
  * Return: list_t*
  */
-user_input_type *add_input_string(user_input_type **head, int control, char *input)
+user_input_type *add_input_string(user_input_type **head,
+		int control, char *input)
 {
 	user_input_type *new_node, *buffer;
 
