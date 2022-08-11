@@ -17,7 +17,8 @@
 
 /* custom data type */
 /**
- * struct list - list that carries the broken up commands and their
+ * struct list - list that carries the broken
+ * up commands and their
  * @string: a command sent by the user
  * @add_or: it's either an add or an or
  * @next: address to the next location
@@ -30,7 +31,8 @@ typedef struct list
 } user_input_type;
 
 /**
- * struct list_s - carries the list of values and it next value
+ * struct list_s - carries the list of
+ * values and it next value
  * @value: the int
  * @next: address to the next value
  */
