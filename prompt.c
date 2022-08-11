@@ -9,7 +9,7 @@ int prompt(char **env)
 {
 	char *buffer = get_env_variable(env, "PWD");
 
-	printf(":) ", buffer);
+	printf("#cisfun$ ", buffer);
 	free(buffer);
 	return (0);
 }
