@@ -46,8 +46,8 @@ typedef struct
 
 /* custom standard library */
 void *_realloc(void *, unsigned int , unsigned int );
-int _pow_recursion(int , int );
-
+int _pow_recursion(i nt , int );
+char *_strcpy(char *dest, char *src)
 /* new functions */
 int sub_main(char **, int *, char ***, list_t **);
 int add_input_history(char ****, char *);
