@@ -15,7 +15,7 @@ int exit_command(char *string)
 
 	if (str_buf2)
 	{
-		iteration1 = strlen(str_buf2);
+		iteration1 = _strlen(str_buf2);
 		if (iteration1 == 0)
 			return (0);
 		for (iteration2 = 0, result = 0; iteration1 > 0; iteration2++)

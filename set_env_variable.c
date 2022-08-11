@@ -16,7 +16,7 @@ int set_env_variable(char **environment, char *variable,
 	for (size_env = 0; environment[size_env]; size_env++)
 		;
 	for (iteration = 0;
-	strncmp(environment[iteration], variable, strlen(variable));
+	strncmp(environment[iteration], variable, _strlen(variable));
 	iteration++)
 	{
 		if ((iteration + 1) == size_env)
@@ -28,10 +28,10 @@ int set_env_variable(char **environment, char *variable,
 	if (iteration == size_env)
 	{
 		environment[iteration] = malloc(sizeof(char) *
-				(strlen(value) + strlen(variable) + 2));
+				(_strlen(value) + _strlen(variable) + 2));
 		add_node(head, iteration);
 	}
-	strcat(strcpy(environment[iteration], variable), "=");
+	strcat(_strcpy(environment[iteration], variable), "=");
 	strcat(environment[iteration], value);
 	if (iteration == size_env)
 		environment[iteration + 1] = NULL;

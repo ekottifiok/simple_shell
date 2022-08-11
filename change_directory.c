@@ -16,8 +16,8 @@ void sub_change_directory(char *old_path,
 	if (strcmp(path, "/") && *path != '/')
 	{
 		buffer = strdup(old_path);
-		buffer = realloc(buffer, (strlen(buffer) + strlen(path) + 2));
-		if (*path != '/' && buffer[strlen(buffer) - 1] != '/')
+		buffer = realloc(buffer, (_strlen(buffer) + _strlen(path) + 2));
+		if (*path != '/' && buffer[_strlen(buffer) - 1] != '/')
 			strcat(buffer, "/");
 		strcat(buffer, path);
 		set_env_variable(env, "PWD", buffer, head);

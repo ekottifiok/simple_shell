@@ -32,7 +32,7 @@ user_input_type *parse_multiline(char **env)
 	prompt(env);
 	if (getline(&user_input, &max_len, stdin) <= 0)
 		return (NULL);
-	user_input[strlen(user_input) - 1] = '\0';
+	user_input[_strlen(user_input) - 1] = '\0';
 	control_values = find_control(user_input);
 	if (*control_values)
 	{

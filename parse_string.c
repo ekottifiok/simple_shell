@@ -28,8 +28,8 @@ char **parse_string(char *str, char *delimiter)
 	token = strtok(buffer, delimiter);
 	while (token)
 	{
-		parsed[k] = malloc((strlen(token) + 1));
-		strcpy(parsed[k++], token);
+		parsed[k] = malloc((_strlen(token) + 1));
+		_strcpy(parsed[k++], token);
 		token = strtok(NULL, delimiter);
 	}
 	parsed[k] = NULL;

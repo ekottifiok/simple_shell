@@ -40,22 +40,22 @@ char *complete_path(char *string, char **environment)
 	while (path_token != NULL)
 	{
 		buffer = realloc(buffer,
-						 strlen(path_token) + strlen(incomplete_path) + 2);
+						 _strlen(path_token) + _strlen(incomplete_path) + 2);
 		if (buffer == NULL)
 			return (NULL);
-		strcpy(buffer, path_token);
+		_strcpy(buffer, path_token);
 		strcat(buffer, "/");
 		strcat(buffer, incomplete_path);
 		if (stat(buffer, &st) == 0)
 		{
 			complete_string = realloc(complete_string,
-									  strlen(string) + strlen(buffer) + 2);
+									  _strlen(string) + _strlen(buffer) + 2);
 			for (; *string; *string++)
 			{
 				if (*string == *delimiter)
 					break;
 			}
-			strcpy(complete_string, buffer);
+			_strcpy(complete_string, buffer);
 			strcat(complete_string, string);
 			break;
 		}
