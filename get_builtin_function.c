@@ -18,11 +18,11 @@ int (*get_builtin_function(char *string))(char **, char *, list_t **)
 	};
 	int iteration;
 
-	buffer = strdup(string);
+	buffer = _strdup(string);
 	first_word = strtok(buffer, delimiter);
 	for (iteration = 0; functions[iteration].keyword != NULL; iteration++)
 	{
-		if (!strcmp(functions[iteration].keyword, first_word))
+		if (!_strcmp(functions[iteration].keyword, first_word))
 			break;
 	}
 	free(buffer);

@@ -18,7 +18,7 @@ int execute_decision(char *string, char **environment, list_t ***head)
 
 	if (string[0] == '/')
 	{
-		buffer2 = strdup(string);
+		buffer2 = _strdup(string);
 		buffer1 = strtok(buffer2, delimiter);
 		if (stat(buffer1, &st) == 0)
 		{

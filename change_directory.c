@@ -13,9 +13,9 @@ void sub_change_directory(char *old_path,
 {
 	char *buffer;
 
-	if (strcmp(path, "/") && *path != '/')
+	if (_strcmp(path, "/") && *path != '/')
 	{
-		buffer = strdup(old_path);
+		buffer = _strdup(old_path);
 		buffer = realloc(buffer, (_strlen(buffer) + _strlen(path) + 2));
 		if (*path != '/' && buffer[_strlen(buffer) - 1] != '/')
 			strcat(buffer, "/");
@@ -49,7 +49,7 @@ int change_directory(char **env, char *string, list_t **head)
 		path = get_env_variable(env, "HOME");
 		flag_path = 1;
 	}
-	else if (!strcmp(path, "-"))
+	else if (!_strcmp(path, "-"))
 	{
 		path = get_env_variable(env, "OLDPWD");
 		flag_path = 1;

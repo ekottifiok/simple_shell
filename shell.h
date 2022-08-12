@@ -59,7 +59,9 @@ void *_realloc(void *, unsigned int, unsigned int);
 int _pow_recursion(int, int);
 int _strlen(char *s);
 char *_strcpy(char *dest, char *src);
-void _printf(char *str, ...);
+int _strcmp(char *s1, char *s2);
+int _strncmp(char *s1, char *s2, int len);
+char *_strdup(char *str);
 
 /* new functions */
 int sub_main(char **, int *, char ***, list_t **, char *);

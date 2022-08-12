@@ -22,7 +22,7 @@ void freed(char *str1, char *str2, char *str3)
 char *complete_path(char *string, char **environment)
 {
 	char *path, *path_token, *buffer,
-	*buffer1, *buffer2 = strdup(string),
+	*buffer1, *buffer2 = _strdup(string),
 	*complete_string, *incomplete_path, *delimiter = " ", *path_delimiter = ":";
 	struct stat st;
 

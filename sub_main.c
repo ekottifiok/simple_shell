@@ -22,12 +22,13 @@ int sub_main(char **env, int *exit_status,
 	for (iter2 = 0, exit_continue = 0; input; iter2++, input = input->next)
 	{
 		buffer = input->string;
-		if (!strncmp(buffer, "exit", 4) || *buffer == '\0' || *buffer == 3)
+		if (!_strncmp(buffer, "exit", 4) || *buffer == '\0' || *buffer == 3)
 		{
 			exit_continue = 1;
 			*exit_status = exit_command(buffer);
+			break;
 		}
-		else if (!strcmp(buffer, "history") && history)
+		else if (!_strcmp(buffer, "history") && history)
 		{
 			print_double_pointer(*history);
 		}

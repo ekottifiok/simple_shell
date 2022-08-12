@@ -287,6 +287,27 @@ build CMakeFiles/simple_shell.dir/_printf.c.o: C_COMPILER__simple_shell_Debug /h
   OBJECT_DIR = CMakeFiles/simple_shell.dir
   OBJECT_FILE_DIR = CMakeFiles/simple_shell.dir
 
+build CMakeFiles/simple_shell.dir/_strcmp.c.o: C_COMPILER__simple_shell_Debug /home/ifiokekott/VSCode/ALX/simple_shell/_strcmp.c || cmake_object_order_depends_target_simple_shell
+  DEP_FILE = CMakeFiles/simple_shell.dir/_strcmp.c.o.d
+  FLAGS = -g -std=gnu11
+  INCLUDES = -I/home/ifiokekott/VSCode/ALX/simple_shell/.
+  OBJECT_DIR = CMakeFiles/simple_shell.dir
+  OBJECT_FILE_DIR = CMakeFiles/simple_shell.dir
+
+build CMakeFiles/simple_shell.dir/_strncmp.c.o: C_COMPILER__simple_shell_Debug /home/ifiokekott/VSCode/ALX/simple_shell/_strncmp.c || cmake_object_order_depends_target_simple_shell
+  DEP_FILE = CMakeFiles/simple_shell.dir/_strncmp.c.o.d
+  FLAGS = -g -std=gnu11
+  INCLUDES = -I/home/ifiokekott/VSCode/ALX/simple_shell/.
+  OBJECT_DIR = CMakeFiles/simple_shell.dir
+  OBJECT_FILE_DIR = CMakeFiles/simple_shell.dir
+
+build CMakeFiles/simple_shell.dir/_strdup.c.o: C_COMPILER__simple_shell_Debug /home/ifiokekott/VSCode/ALX/simple_shell/_strdup.c || cmake_object_order_depends_target_simple_shell
+  DEP_FILE = CMakeFiles/simple_shell.dir/_strdup.c.o.d
+  FLAGS = -g -std=gnu11
+  INCLUDES = -I/home/ifiokekott/VSCode/ALX/simple_shell/.
+  OBJECT_DIR = CMakeFiles/simple_shell.dir
+  OBJECT_FILE_DIR = CMakeFiles/simple_shell.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target simple_shell
@@ -295,7 +316,7 @@ build CMakeFiles/simple_shell.dir/_printf.c.o: C_COMPILER__simple_shell_Debug /h
 #############################################
 # Link the executable simple_shell
 
-build simple_shell: C_EXECUTABLE_LINKER__simple_shell_Debug CMakeFiles/simple_shell.dir/prompt.c.o CMakeFiles/simple_shell.dir/shell.c.o CMakeFiles/simple_shell.dir/_strlen.c.o CMakeFiles/simple_shell.dir/_strcpy.c.o CMakeFiles/simple_shell.dir/copy_string_index.c.o CMakeFiles/simple_shell.dir/parse_string.c.o CMakeFiles/simple_shell.dir/_realloc.c.o CMakeFiles/simple_shell.dir/execute_command.c.o CMakeFiles/simple_shell.dir/execute_decision.c.o CMakeFiles/simple_shell.dir/free_double_pointer.c.o CMakeFiles/simple_shell.dir/get_env_variable.c.o CMakeFiles/simple_shell.dir/complete_path.c.o CMakeFiles/simple_shell.dir/get_builtin_function.c.o CMakeFiles/simple_shell.dir/change_directory.c.o CMakeFiles/simple_shell.dir/set_env_variable.c.o CMakeFiles/simple_shell.dir/exit_command.c.o CMakeFiles/simple_shell.dir/echo.c.o CMakeFiles/simple_shell.dir/print_working_directory.c.o CMakeFiles/simple_shell.dir/help.c.o CMakeFiles/simple_shell.dir/print_double_pointer.c.o CMakeFiles/simple_shell.dir/_pow_recursion.c.o CMakeFiles/simple_shell.dir/copy_double_pointer.c.o CMakeFiles/simple_shell.dir/print_env.c.o CMakeFiles/simple_shell.dir/add_node_list.c.o CMakeFiles/simple_shell.dir/free_list.c.o CMakeFiles/simple_shell.dir/find_control.c.o CMakeFiles/simple_shell.dir/parse_multiline.c.o CMakeFiles/simple_shell.dir/add_input_string.c.o CMakeFiles/simple_shell.dir/free_user_input_type.c.o CMakeFiles/simple_shell.dir/__getline.c.o CMakeFiles/simple_shell.dir/sub_main.c.o CMakeFiles/simple_shell.dir/add_input_history.c.o CMakeFiles/simple_shell.dir/remove_whitespace.c.o CMakeFiles/simple_shell.dir/_printf.c.o
+build simple_shell: C_EXECUTABLE_LINKER__simple_shell_Debug CMakeFiles/simple_shell.dir/prompt.c.o CMakeFiles/simple_shell.dir/shell.c.o CMakeFiles/simple_shell.dir/_strlen.c.o CMakeFiles/simple_shell.dir/_strcpy.c.o CMakeFiles/simple_shell.dir/copy_string_index.c.o CMakeFiles/simple_shell.dir/parse_string.c.o CMakeFiles/simple_shell.dir/_realloc.c.o CMakeFiles/simple_shell.dir/execute_command.c.o CMakeFiles/simple_shell.dir/execute_decision.c.o CMakeFiles/simple_shell.dir/free_double_pointer.c.o CMakeFiles/simple_shell.dir/get_env_variable.c.o CMakeFiles/simple_shell.dir/complete_path.c.o CMakeFiles/simple_shell.dir/get_builtin_function.c.o CMakeFiles/simple_shell.dir/change_directory.c.o CMakeFiles/simple_shell.dir/set_env_variable.c.o CMakeFiles/simple_shell.dir/exit_command.c.o CMakeFiles/simple_shell.dir/echo.c.o CMakeFiles/simple_shell.dir/print_working_directory.c.o CMakeFiles/simple_shell.dir/help.c.o CMakeFiles/simple_shell.dir/print_double_pointer.c.o CMakeFiles/simple_shell.dir/_pow_recursion.c.o CMakeFiles/simple_shell.dir/copy_double_pointer.c.o CMakeFiles/simple_shell.dir/print_env.c.o CMakeFiles/simple_shell.dir/add_node_list.c.o CMakeFiles/simple_shell.dir/free_list.c.o CMakeFiles/simple_shell.dir/find_control.c.o CMakeFiles/simple_shell.dir/parse_multiline.c.o CMakeFiles/simple_shell.dir/add_input_string.c.o CMakeFiles/simple_shell.dir/free_user_input_type.c.o CMakeFiles/simple_shell.dir/__getline.c.o CMakeFiles/simple_shell.dir/sub_main.c.o CMakeFiles/simple_shell.dir/add_input_history.c.o CMakeFiles/simple_shell.dir/remove_whitespace.c.o CMakeFiles/simple_shell.dir/_printf.c.o CMakeFiles/simple_shell.dir/_strcmp.c.o CMakeFiles/simple_shell.dir/_strncmp.c.o CMakeFiles/simple_shell.dir/_strdup.c.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/simple_shell.dir
   POST_BUILD = :

@@ -23,7 +23,7 @@ int add_input_history(char ****history, char *string)
 	}
 
 
-	(**history)[iter++] = strdup(string);
+	(**history)[iter++] = _strdup(string);
 	(**history)[iter] = NULL;
 
 	return (0);

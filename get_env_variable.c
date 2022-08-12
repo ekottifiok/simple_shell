@@ -15,15 +15,15 @@ char *get_env_variable(char **env, char *var)
 	for (size_env = 0; env[size_env]; size_env++)
 		;
 
-	for (iter = 0; strncmp(env[iter], var, _strlen(var)); iter++)
+	for (iter = 0; _strncmp(env[iter], var, _strlen(var)); iter++)
 	{
 		if ((iter + 1) == size_env)
 			return (NULL);
 	}
-	buffer = strdup(env[iter]);
+	buffer = _strdup(env[iter]);
 	path = strtok(buffer, delim);
 	path = strtok(NULL, delim);
-	result = strdup(path);
+	result = _strdup(path);
 	free(buffer);
 	return (result);
 }

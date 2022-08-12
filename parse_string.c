@@ -11,7 +11,7 @@
 char **parse_string(char *str, char *delimiter)
 {
 	int iteration, no_delimiter, k;
-	char **parsed, *buffer = strdup(str), *token;
+	char **parsed, *buffer = _strdup(str), *token;
 
 	/*
 	 * calculates the number of tokens for the string

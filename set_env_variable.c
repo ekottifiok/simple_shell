@@ -16,7 +16,7 @@ int set_env_variable(char **environment, char *variable,
 	for (size_env = 0; environment[size_env]; size_env++)
 		;
 	for (iteration = 0;
-	strncmp(environment[iteration], variable, _strlen(variable));
+	_strncmp(environment[iteration], variable, _strlen(variable));
 	iteration++)
 	{
 		if ((iteration + 1) == size_env)
