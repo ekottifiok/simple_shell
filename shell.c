@@ -18,7 +18,8 @@ int main(int ac __attribute__((unused)),
 
 	while (1)
 	{
-		prompt(env);
+		if (isatty(0))
+			prompt(env);
 		getline(&user_input, &max_len, stdin);
 
 		fflush(stdout);

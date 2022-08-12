@@ -10,6 +10,7 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <signal.h>
+#include <stdarg.h>
 
 /* custom definitions */
 #define STR_TO_INT(val) (val - 48)
@@ -58,6 +59,7 @@ void *_realloc(void *, unsigned int, unsigned int);
 int _pow_recursion(int, int);
 int _strlen(char *s);
 char *_strcpy(char *dest, char *src);
+void _printf(char *str, ...);
 
 /* new functions */
 int sub_main(char **, int *, char ***, list_t **, char *);

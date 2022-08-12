@@ -38,4 +38,4 @@ add_executable(simple_shell
         free_user_input_type.c
         __getline.c
         sub_main.c
-        add_input_history.c remove_whitespace.c)
+        add_input_history.c remove_whitespace.c _printf.c)
