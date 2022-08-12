@@ -14,6 +14,8 @@ int (*get_builtin_function(char *string))(char **, char *, list_t **)
 			{"echo", echo},
 			{"help", help},
 			{"env", print_env},
+			{"setenv", set_env},
+			{"unsetenv", unset_env},
 			{NULL, NULL},
 	};
 	int iteration;

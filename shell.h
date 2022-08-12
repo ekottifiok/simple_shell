@@ -92,5 +92,13 @@ user_input_type *parse_multiline(char *);
 void free_user_input_type(user_input_type *head);
 ssize_t __getline(char **, size_t *, FILE *);
 char *remove_whitespace(char *string);
+int unset_env(char **env __attribute__((unused)),
+              char *string __attribute__((unused)),
+              list_t **head
+);
+int set_env(char **env __attribute__((unused)),
+            char *string __attribute__((unused)),
+            list_t **head
+);
 
 #endif
