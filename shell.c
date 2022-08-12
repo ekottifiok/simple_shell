@@ -33,6 +33,5 @@ int main(int ac __attribute__((unused)),
 		free_double_pointer(history);
 	if (head != NULL)
 		free_list(head, env);
-	exit(exit_status);
-	return (0);
+	return (-98);
 }

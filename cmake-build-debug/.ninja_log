@@ -85,3 +85,16 @@
 26	46	1660337945974189737	simple_shell	eebb5afbb9e881fe
 0	28	1660338023397211614	CMakeFiles/simple_shell.dir/exit_command.c.o	3e4d16ddbe3aedff
 28	49	1660338023417210449	simple_shell	eebb5afbb9e881fe
+1	27	1660339019325360447	CMakeFiles/simple_shell.dir/shell.c.o	4af367962bf29fe3
+1	27	1660339019325360447	CMakeFiles/simple_shell.dir/exit_command.c.o	3e4d16ddbe3aedff
+27	48	1660339019345360580	simple_shell	eebb5afbb9e881fe
+1	45	1660339802974668078	CMakeFiles/simple_shell.dir/execute_decision.c.o	9fc4cae521abb627
+45	91	1660339803022668802	simple_shell	eebb5afbb9e881fe
+1	106	1660339988573116086	CMakeFiles/simple_shell.dir/execute_decision.c.o	9fc4cae521abb627
+106	134	1660339988677115427	simple_shell	eebb5afbb9e881fe
+1	26	1660340096828655397	CMakeFiles/simple_shell.dir/execute_decision.c.o	9fc4cae521abb627
+26	44	1660340096848655350	simple_shell	eebb5afbb9e881fe
+0	99	1660340140032585235	CMakeFiles/simple_shell.dir/execute_decision.c.o	9fc4cae521abb627
+99	119	1660340140124585149	simple_shell	eebb5afbb9e881fe
+0	27	1660340297804780107	CMakeFiles/simple_shell.dir/execute_decision.c.o	9fc4cae521abb627
+27	47	1660340297824780171	simple_shell	eebb5afbb9e881fe

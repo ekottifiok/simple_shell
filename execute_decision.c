@@ -11,42 +11,44 @@ int execute_decision(char *string, char **environment, list_t ***head)
 {
 	struct stat st;
 	char *buffer1, *buffer2, *complete_string, *delimiter = " ", **parsed_string;
-	int (*builtin_commands)(char **, char *, list_t **) = NULL;
+	int (*builtin_commands)(char **, char *, list_t **) = NULL, success_fail = 0;
 	/*
 	 * Returns first path_token
 	 */
 
-	if (string[0] == '/')
+	builtin_commands = get_builtin_function(string);
+	if (builtin_commands)
+	{
+		if (!builtin_commands(environment, string, *head))
+			return (0);
+	}
+
+	else if (string[0] == '/')
 	{
 		buffer2 = _strdup(string);
 		buffer1 = strtok(buffer2, delimiter);
 		if (stat(buffer1, &st) == 0)
 		{
 			parsed_string = parse_string(string, " ");
-			execute_command(parsed_string, NULL);
+			if (execute_command(parsed_string, NULL))
+				success_fail = 1;
 			free_double_pointer(parsed_string);
-			free(buffer2);
-			return (0);
 		}
 		free(buffer2);
 	}
 	else
 	{
-		builtin_commands = get_builtin_function(string);
-		if (builtin_commands)
-		{
-			if (!builtin_commands(environment, string, *head))
-				return (0);
-		}
 		complete_string = complete_path(string, environment);
-		if (complete_string)
+		if (complete_string && *complete_string != '\0')
 		{
 			parsed_string = parse_string(complete_string, " ");
-			execute_command(parsed_string, NULL);
+			if (execute_command(parsed_string, NULL))
+				success_fail = 1;
 			free(complete_string);
 			free_double_pointer(parsed_string);
 			return (0);
 		}
+		success_fail = 1;
 	}
-	return (1);
+	return (success_fail);
 }
