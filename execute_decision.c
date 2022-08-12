@@ -10,7 +10,7 @@
 int execute_decision(char *string, char **environment, list_t ***head)
 {
 	struct stat st;
-	char *complete_string, **parsed_string;
+	char *buffer1, *buffer2, *complete_string, *delimiter = " ", **parsed_string;
 	int (*builtin_commands)(char **, char *, list_t **) = NULL;
 	/*
 	 * Returns first path_token
@@ -18,18 +18,21 @@ int execute_decision(char *string, char **environment, list_t ***head)
 
 	if (string[0] == '/')
 	{
-		if (stat(string, &st) == 0)
+		buffer2 = strdup(string);
+		buffer1 = strtok(buffer2, delimiter);
+		if (stat(buffer1, &st) == 0)
 		{
 			parsed_string = parse_string(string, " ");
 			execute_command(parsed_string, NULL);
 			free_double_pointer(parsed_string);
+			free(buffer2);
 			return (0);
 		}
+		free(buffer2);
 	}
 	else
 	{
 		builtin_commands = get_builtin_function(string);
-
 		if (builtin_commands)
 		{
 			if (!builtin_commands(environment, string, *head))

@@ -60,7 +60,7 @@ int _strlen(char *s);
 char *_strcpy(char *dest, char *src);
 
 /* new functions */
-int sub_main(char **, int *, char ***, list_t **);
+int sub_main(char **, int *, char ***, list_t **, char *);
 char *copy_string_index(char *, unsigned int, char*);
 int add_input_history(char ****, char *);
 int prompt(char **);
@@ -84,7 +84,7 @@ list_t *add_node(list_t **head, int value);
 void free_list(list_t *head, char **);
 int *find_control(char *user_input);
 user_input_type *add_input_string(user_input_type **, int, char *);
-user_input_type *parse_multiline(char **);
+user_input_type *parse_multiline(char *);
 void free_user_input_type(user_input_type *head);
 ssize_t __getline(char **, size_t *, FILE *);
 

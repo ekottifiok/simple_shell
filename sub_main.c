@@ -6,16 +6,18 @@
  * @exit_status: the status to be exited
  * @history: history list
  * @head: the changes to the environment variable
+ * @user_input: the input by the user
  * Return: either 0 to continue or 1 to break
  */
-int sub_main(char **env, int *exit_status, char ***history, list_t **head)
+int sub_main(char **env, int *exit_status,
+			 char ***history, list_t **head, char *user_input)
 {
 	user_input_type *input, *input_buffer;
 	char *buffer;
 	unsigned int iter2;
 	int exit_continue;
 
-	input = parse_multiline(env);
+	input = parse_multiline(user_input);
 	input_buffer = input;
 	for (iter2 = 0, exit_continue = 0; input; iter2++, input = input->next)
 	{

@@ -12,14 +12,19 @@ int main(int ac __attribute__((unused)),
 		 char **env)
 {
 	int exit_status = 0;
-	char **history = NULL;
+	char **history = NULL, *user_input = NULL;
+	size_t max_len = BUFSIZ;
 	list_t *head = NULL;
 
 	while (1)
 	{
-		if (sub_main(env, &exit_status, &history, &head))
+		prompt(env);
+		getline(&user_input, &max_len, stdin);
+		fflush(stdout);
+		if (sub_main(env, &exit_status, &history, &head, user_input))
 			break;
 	}
+	free(user_input);
 	if (history)
 		free_double_pointer(history);
 	if (head != NULL)
