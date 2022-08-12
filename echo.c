@@ -10,9 +10,9 @@
 int echo(char **env __attribute__((unused)), char *string,
 		 list_t **head __attribute__((unused)))
 {
-	while (*string != ' ')
-		*string++;
-	*string++;
-	fprintf(stdout, "%s\n", string);
+	char *buffer;
+
+	buffer = copy_string_index(string, 5, '\0');
+	fprintf(stdout, "%s\n", buffer);
 	return (0);
 }

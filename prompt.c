@@ -5,11 +5,14 @@
  * @env: the environment variable
  * Return: 0 for success
  */
-int prompt(char **env)
+int prompt(char **env __attribute__((unused)))
 {
-	char *buffer = get_env_variable(env, "PWD");
+	/**
+	 * char *buffer = get_env_variable(env, "PWD");
+	 * printf("#cisfun$ ", buffer)
+	 * free(buffer)
+	 */
 
-	printf("#cisfun$ ", buffer);
-	free(buffer);
+	printf("#cisfun$ ");
 	return (0);
 }

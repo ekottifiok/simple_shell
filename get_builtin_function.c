@@ -16,7 +16,7 @@ int (*get_builtin_function(char *string))(char **, char *, list_t **)
 			{"env", print_env},
 			{NULL, NULL},
 	};
-	int (*builtin_commands)(char **, char *, list_t **) = NULL, iteration;
+	int iteration;
 
 	buffer = strdup(string);
 	first_word = strtok(buffer, delimiter);

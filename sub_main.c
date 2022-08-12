@@ -21,18 +21,16 @@ int sub_main(char **env, int *exit_status, char ***history, list_t **head)
 	{
 		buffer = input->string;
 		while (*buffer == ' ')
-			*buffer++;
+			(*buffer)++;
 		if (!strncmp(buffer, "exit", 4) || *buffer == '\0')
 		{
 			exit_continue = 1;
 			*exit_status = exit_command(buffer);
 		}
-
 		else if (!strcmp(buffer, "history") && history)
 		{
 			print_double_pointer(*history);
 		}
-
 		else
 		{
 			if (execute_decision(buffer, env, &head))
@@ -47,6 +45,8 @@ int sub_main(char **env, int *exit_status, char ***history, list_t **head)
 				break;
 			add_input_history(&history, buffer);
 		}
+		if (*input->string == ' ')
+			free(buffer);
 	}
 	free_user_input_type(input_buffer);
 	return (exit_continue);

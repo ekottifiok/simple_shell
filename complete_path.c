@@ -5,14 +5,12 @@
  * @str1: string to be freed
  * @str2: string to be freed
  * @str3: string to be freed
- * @str4: string to be freed
  */
-void freed(char *str1, char *str2, char *str3, char *str4)
+void freed(char *str1, char *str2, char *str3)
 {
 	free(str1);
 	free(str2);
 	free(str3);
-	free(str4);
 }
 
 /**
@@ -23,14 +21,14 @@ void freed(char *str1, char *str2, char *str3, char *str4)
  */
 char *complete_path(char *string, char **environment)
 {
-	char *path, *path_token, *buffer, *buffer2 = strdup(string), *buffer3,
+	char *path, *path_token, *buffer,
+	*buffer1, *buffer2 = strdup(string),
 	*complete_string, *incomplete_path, *delimiter = " ", *path_delimiter = ":";
 	struct stat st;
 
 	incomplete_path = strtok(buffer2, delimiter);
 	path = get_env_variable(environment, "PATH");
-	buffer3 = strdup(path);
-	path_token = strtok(buffer3, path_delimiter);
+	path_token = strtok(path, path_delimiter);
 	buffer = malloc(sizeof(char));
 	if (!buffer)
 		return (NULL);
@@ -50,17 +48,17 @@ char *complete_path(char *string, char **environment)
 		{
 			complete_string = realloc(complete_string,
 									  _strlen(string) + _strlen(buffer) + 2);
-			for (; *string; *string++)
-			{
-				if (*string == *delimiter)
-					break;
-			}
 			_strcpy(complete_string, buffer);
-			strcat(complete_string, string);
+			buffer1 = copy_string_index(string, 0, delimiter);
+			if (buffer1)
+			{
+				strcat(complete_string, buffer1);
+				free(buffer1);
+			}
 			break;
 		}
 		path_token = strtok(NULL, path_delimiter);
 	}
-	freed(buffer, path, buffer2, buffer3);
+	freed(buffer, path, buffer2);
 	return (complete_string);
 }

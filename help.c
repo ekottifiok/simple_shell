@@ -15,5 +15,7 @@ int help(char **env __attribute__((unused)),
 	puts("I'm here to help you.");
 	puts("How are you doing today?");
 	puts("Happy to see you.");
+	while (*head)
+		break;
 	return (0);
 }

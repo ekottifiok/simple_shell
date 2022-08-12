@@ -61,6 +61,7 @@ char *_strcpy(char *dest, char *src);
 
 /* new functions */
 int sub_main(char **, int *, char ***, list_t **);
+char *copy_string_index(char *, unsigned int, char*);
 int add_input_history(char ****, char *);
 int prompt(char **);
 int execute_command(char *[], char **);

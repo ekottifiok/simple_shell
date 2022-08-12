@@ -10,6 +10,7 @@ add_executable(simple_shell
         shell.c
         _strlen.c
         _strcpy.c
+        copy_string_index.c
         parse_string.c
         _realloc.c
         execute_command.c

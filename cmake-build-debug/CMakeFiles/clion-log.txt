@@ -1,13 +1,4 @@
 /home/ifiokekott/.jetbrains/clion-2022.2/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/ifiokekott/.jetbrains/clion-2022.2/bin/ninja/linux/ninja -G Ninja -S /home/ifiokekott/VSCode/ALX/simple_shell -B /home/ifiokekott/VSCode/ALX/simple_shell/cmake-build-debug
 -- Configuring done
-CMake Error at CMakeLists.txt:8 (add_executable):
-  Cannot find source file:
-
-    _strcpy.c
-
-
-CMake Error at CMakeLists.txt:8 (add_executable):
-  No SOURCES given to target: simple_shell
-
-
-CMake Generate step failed.  Build files cannot be regenerated correctly.
+-- Generating done
+-- Build files have been written to: /home/ifiokekott/VSCode/ALX/simple_shell/cmake-build-debug
