@@ -17,13 +17,12 @@ int sub_main(char **env, int *exit_status,
 	unsigned int iter2;
 	int exit_continue;
 
+
 	input = parse_multiline(user_input);
 	input_buffer = input;
 	for (iter2 = 0, exit_continue = 0; input; iter2++, input = input->next)
 	{
 		buffer = input->string;
-		while (*buffer == ' ')
-			(*buffer)++;
 		if (!strncmp(buffer, "exit", 4) || *buffer == '\0')
 		{
 			exit_continue = 1;

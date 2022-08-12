@@ -87,5 +87,6 @@ user_input_type *add_input_string(user_input_type **, int, char *);
 user_input_type *parse_multiline(char *);
 void free_user_input_type(user_input_type *head);
 ssize_t __getline(char **, size_t *, FILE *);
+char *remove_whitespace(char *string);
 
 #endif

@@ -20,8 +20,11 @@ int main(int ac __attribute__((unused)),
 	{
 		prompt(env);
 		getline(&user_input, &max_len, stdin);
+
 		fflush(stdout);
 		if (sub_main(env, &exit_status, &history, &head, user_input))
+			break;
+		if (!isatty(0))
 			break;
 	}
 	free(user_input);

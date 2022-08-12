@@ -38,13 +38,14 @@ user_input_type *parse_multiline(char *user_input)
 		parsed_str = strtok(user_input, delim);
 		while (parsed_str)
 		{
-			add_input_string(&list, control_values[iter1++], parsed_str);
+			add_input_string(&list, control_values[iter1++],
+							 remove_whitespace(parsed_str));
 			parsed_str = strtok(NULL, delim);
 		}
 	}
 	else
 	{
-		list = add_input_string(&list, 0, user_input);
+		list = add_input_string(&list, 0, remove_whitespace(user_input));
 	}
 	free(control_values);
 	return (list);

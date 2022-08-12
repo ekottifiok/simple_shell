@@ -16,7 +16,7 @@ user_input_type *add_input_string(user_input_type **head,
 	new_node = malloc(sizeof(user_input_type));
 	if (!new_node)
 		return (NULL);
-	new_node->string = strdup(input);
+	new_node->string = input;
 	new_node->add_or = control;
 	new_node->next = NULL;
 
