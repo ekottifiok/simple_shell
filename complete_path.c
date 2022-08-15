@@ -14,9 +14,10 @@ void freed(char *str2, char *str3)
 /**
  * check_file - checks if a path exist
  * @path: path to be checked
+ * @user_input: user inputted string
  * Return: returns the path if it exit and null if not
  */
-char *check_file(char *path)
+char *check_file(char *path, char *user_input)
 {
 	char *delimiter = " ", *buffer, *complete_string;
 	struct stat st;
@@ -24,7 +25,7 @@ char *check_file(char *path)
 	if (stat(path, &st) == 0)
 	{
 		complete_string = path;
-		buffer = copy_string_index(path, 0, delimiter);
+		buffer = copy_string_index(user_input, 0, delimiter);
 		if (buffer)
 		{
 			strcat(complete_string, buffer);
@@ -64,7 +65,7 @@ char *complete_path(char *string, char **environment)
 		_strcpy(buffer, path_token);
 		_strcat(buffer, "/");
 		_strcat(buffer, incomplete_path);
-		complete_string = check_file(buffer);
+		complete_string = check_file(buffer, string);
 		if (complete_string)
 			break;
 		path_token = strtok(NULL, path_delimiter);
