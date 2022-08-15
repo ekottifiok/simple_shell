@@ -11,7 +11,12 @@ void freed(char *str2, char *str3)
 	free(str3);
 }
 
-char * check_file(char *path)
+/**
+ * check_file - checks if a path exist
+ * @path: path to be checked
+ * Return: returns the path if it exit and null if not
+ */
+char *check_file(char *path)
 {
 	char *delimiter = " ", *buffer, *complete_string;
 	struct stat st;
@@ -39,7 +44,7 @@ char * check_file(char *path)
 char *complete_path(char *string, char **environment)
 {
 	char *path, *path_token, *buffer,
-	*buffer1, *buffer2 = _strdup(string),
+	*buffer2 = _strdup(string),
 	*complete_string = NULL, *incomplete_path,
 	*delimiter = " ", *path_delimiter = ":";
 
