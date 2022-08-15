@@ -13,14 +13,15 @@ int main(int ac __attribute__((unused)),
 {
 	int exit_status = 0;
 	char **history = NULL, *user_input = NULL;
-	size_t max_len = BUFSIZ;
+	size_t max_len = BUFSIZ, len_user_input;
 	list_t *head = NULL;
 
 	while (1)
 	{
 		if (isatty(0))
 			prompt(env);
-		getline(&user_input, &max_len, stdin);
+		len_user_input = _getline(&user_input, &max_len, stdin);
+		user_input[len_user_input - 1] = '\0';
 
 		fflush(stdout);
 		if (sub_main(env, &exit_status, &history, &head, user_input))

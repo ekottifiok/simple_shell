@@ -9,9 +9,9 @@ char *control_converter(int specifier)
 {
 	if (specifier == 1)
 		return ("&&");
-	else if (specifier == -1)
-		return ("||");
 	else if (specifier == 2)
+		return ("||");
+	else if (specifier == 3)
 		return (";");
 	return (NULL);
 }
@@ -30,7 +30,6 @@ user_input_type *parse_multiline(char *user_input)
 	int *control_values;
 	user_input_type *list = NULL;
 
-	user_input[_strlen(user_input) - 1] = '\0';
 	control_values = find_control(user_input);
 	if (*control_values)
 	{

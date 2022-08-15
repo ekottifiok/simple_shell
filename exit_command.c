@@ -19,10 +19,12 @@ int exit_command(char *string)
 		iteration1 = _strlen(str_buf2);
 		if (iteration1 == 0)
 			return (0);
-		if (*str_buf2 == '-') {
+		if (*str_buf2 == '-')
+		{
 			iteration2 = 1;
 			iteration1--;
-		}else
+		}
+		else
 			iteration2 = 0;
 		for (; iteration1 > 0; iteration2++)
 		{

@@ -15,14 +15,12 @@ int execute_decision(char *string, char **environment, list_t ***head)
 	/*
 	 * Returns first path_token
 	 */
-
 	builtin_commands = get_builtin_function(string);
 	if (builtin_commands)
 	{
 		if (!builtin_commands(environment, string, *head))
 			return (0);
 	}
-
 	else if (string[0] == '/')
 	{
 		buffer2 = _strdup(string);
@@ -39,7 +37,7 @@ int execute_decision(char *string, char **environment, list_t ***head)
 	else
 	{
 		complete_string = complete_path(string, environment);
-		if (complete_string && *complete_string != '\0')
+		if (complete_string)
 		{
 			parsed_string = parse_string(complete_string, " ");
 			if (execute_command(parsed_string, NULL))

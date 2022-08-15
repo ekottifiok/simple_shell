@@ -1,7 +1,8 @@
 /**
- * _strncmp: compares two strings and returns the difference
+ * _strncmp - compares two strings and returns the difference
  * @s1: string one
  * @s2: string two
+ * @len: expected len of string
  * Return: the difference in string
  */
 int _strncmp(char *s1, char *s2, int len)

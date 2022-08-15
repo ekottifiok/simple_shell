@@ -31,8 +31,8 @@ int set_env_variable(char **environment, char *variable,
 				(_strlen(value) + _strlen(variable) + 2));
 		add_node(head, iteration);
 	}
-	strcat(_strcpy(environment[iteration], variable), "=");
-	strcat(environment[iteration], value);
+	_strcat(_strcpy(environment[iteration], variable), "=");
+	_strcat(environment[iteration], value);
 	if (iteration == size_env)
 		environment[iteration + 1] = NULL;
 	return (0);

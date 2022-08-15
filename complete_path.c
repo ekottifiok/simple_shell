@@ -2,13 +2,11 @@
 
 /**
  * freed - handles the freeing
- * @str1: string to be freed
  * @str2: string to be freed
  * @str3: string to be freed
  */
-void freed(char *str1, char *str2, char *str3)
+void freed(char *str2, char *str3)
 {
-	free(str1);
 	free(str2);
 	free(str3);
 }
@@ -23,7 +21,8 @@ char *complete_path(char *string, char **environment)
 {
 	char *path, *path_token, *buffer,
 	*buffer1, *buffer2 = _strdup(string),
-	*complete_string, *incomplete_path, *delimiter = " ", *path_delimiter = ":";
+	*complete_string = NULL, *incomplete_path,
+	*delimiter = " ", *path_delimiter = ":";
 	struct stat st;
 
 	incomplete_path = strtok(buffer2, delimiter);
@@ -32,23 +31,18 @@ char *complete_path(char *string, char **environment)
 	buffer = malloc(sizeof(char));
 	if (!buffer)
 		return (NULL);
-	complete_string = malloc(sizeof(char));
-	if (!complete_string)
-		return (NULL);
 	while (path_token != NULL)
 	{
-		buffer = realloc(buffer,
-						 _strlen(path_token) + _strlen(incomplete_path) + 2);
-		if (buffer == NULL)
+		buffer = realloc(buffer, (_strlen(path_token) + _strlen(incomplete_path)
+		+ _strlen(string) + 2) * sizeof(char));
+		if (!buffer)
 			return (NULL);
 		_strcpy(buffer, path_token);
-		strcat(buffer, "/");
-		strcat(buffer, incomplete_path);
+		_strcat(buffer, "/");
+		_strcat(buffer, incomplete_path);
 		if (stat(buffer, &st) == 0)
 		{
-			complete_string = realloc(complete_string,
-									  _strlen(string) + _strlen(buffer) + 2);
-			_strcpy(complete_string, buffer);
+			complete_string = buffer;
 			buffer1 = copy_string_index(string, 0, delimiter);
 			if (buffer1)
 			{
@@ -59,6 +53,9 @@ char *complete_path(char *string, char **environment)
 		}
 		path_token = strtok(NULL, path_delimiter);
 	}
-	freed(buffer, path, buffer2);
-	return (complete_string);
+	freed(path, buffer2);
+	if (complete_string[0] != '\0')
+		return (complete_string);
+	free(complete_string);
+	return (NULL);
 }

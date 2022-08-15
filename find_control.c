@@ -19,15 +19,15 @@ int *find_control(char *user_input)
 		test[2] = user_input[iter1 + 2];
 		test[3] = user_input[iter1 + 3];
 		test[4] = '\0';
-		if (!_strcmp(test, " && ") || !_strcmp(test, " || "))
+		if (!_strcmp(test, " && ") || !_strcmp(test, " || ") || *test == ';')
 		{
 			control = realloc(control, sizeof(int) * (iter2 + 2));
 			if (!_strcmp(test, " && "))
 				control[iter2++] = 1;
 			else if (!_strcmp(test, " || "))
-				control[iter2++] = -1;
-			else if (!_strcmp(test, " ; "))
 				control[iter2++] = 2;
+			else if (*test == ';')
+				control[iter2++] = 3;
 			control[iter2] = 0;
 		}
 	}

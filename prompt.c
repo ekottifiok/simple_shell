@@ -13,6 +13,6 @@ int prompt(char **env __attribute__((unused)))
 	 * free(buffer)
 	 */
 
-	printf("#cisfun$ ");
+	_puts("#cisfun$ ");
 	return (0);
 }

@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * _strcmp: compares two strings and returns the difference
+ * _strcmp - compares two strings and returns the difference
  * @s1: string one
  * @s2: string two
  * Return: the difference in string

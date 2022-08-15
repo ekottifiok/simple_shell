@@ -39,10 +39,10 @@ int sub_main(char **env, int *exit_status,
 				printf("Command '%s' not found\n", buffer);
 				if (input->add_or == 1)
 					break;
-				if (input->add_or == 2)
+				if (input->add_or == 3)
 					continue;
 			}
-			if (input->add_or == -1)
+			if (input->add_or == 2)
 				break;
 			add_input_history(&history, buffer);
 		}

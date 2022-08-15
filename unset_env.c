@@ -7,10 +7,7 @@
  * @head: carries the location of the new additions to the env
  * Return: 0 for success
  */
-int unset_env(char **env __attribute__((unused)),
-         char *string __attribute__((unused)),
-         list_t **head
-)
+int unset_env(char **env, char *string, list_t **head __attribute__((unused)))
 {
 	char **data;
 	unsigned int iter, size_env;
@@ -35,8 +32,8 @@ int unset_env(char **env __attribute__((unused)),
 			return (1);
 		}
 	}
-	for (; iter < size_env;iter++)
-		env[iter] = env[iter+1];
+	for (; iter < size_env; iter++)
+		env[iter] = env[iter + 1];
 
 
 	return (0);

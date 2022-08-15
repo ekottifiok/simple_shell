@@ -62,6 +62,10 @@ char *_strcpy(char *dest, char *src);
 int _strcmp(char *s1, char *s2);
 int _strncmp(char *s1, char *s2, int len);
 char *_strdup(char *str);
+ssize_t _getline(char **, size_t *, FILE *);
+int _putchar(char);
+char *_strcat(char *, char *);
+void _puts(char *);
 
 /* new functions */
 int sub_main(char **, int *, char ***, list_t **, char *);
@@ -92,13 +96,7 @@ user_input_type *parse_multiline(char *);
 void free_user_input_type(user_input_type *head);
 ssize_t __getline(char **, size_t *, FILE *);
 char *remove_whitespace(char *string);
-int unset_env(char **env __attribute__((unused)),
-              char *string __attribute__((unused)),
-              list_t **head
-);
-int set_env(char **env __attribute__((unused)),
-            char *string __attribute__((unused)),
-            list_t **head
-);
+int unset_env(char **, char *, list_t **);
+int set_env(char **, char *, list_t **);
 
 #endif
