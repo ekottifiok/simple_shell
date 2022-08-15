@@ -21,7 +21,7 @@ int execute_decision(char *string, char **environment, list_t ***head)
 		if (!builtin_commands(environment, string, *head))
 			return (0);
 	}
-	else if (string[0] == '/')
+	else if (string[0] == '/' || (string[0] == '.' && string[1] == '/'))
 	{
 		buffer2 = _strdup(string);
 		buffer1 = strtok(buffer2, delimiter);
