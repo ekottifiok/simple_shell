@@ -18,15 +18,14 @@ int main(int ac __attribute__((unused)),
 
 	while (1)
 	{
-		if (isatty(0))
+		if (isatty(STDIN_FILENO))
 			prompt(env);
 		len_user_input = _getline(&user_input, &max_len, stdin);
 		user_input[len_user_input - 1] = '\0';
 
-		fflush(stdout);
 		if (sub_main(env, &exit_status, &history, &head, user_input))
 			break;
-		if (!isatty(0))
+		if (!isatty(STDIN_FILENO))
 			break;
 	}
 	free(user_input);

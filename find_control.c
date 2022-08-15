@@ -19,7 +19,8 @@ int *find_control(char *user_input)
 		test[2] = user_input[iter1 + 2];
 		test[3] = user_input[iter1 + 3];
 		test[4] = '\0';
-		if (!_strcmp(test, " && ") || !_strcmp(test, " || ") || *test == ';')
+		if (!_strcmp(test, " && ") || !_strcmp(test, " || ")
+		|| *test == ';' || *test == '\n')
 		{
 			control = realloc(control, sizeof(int) * (iter2 + 2));
 			if (!_strcmp(test, " && "))
@@ -28,6 +29,8 @@ int *find_control(char *user_input)
 				control[iter2++] = 2;
 			else if (*test == ';')
 				control[iter2++] = 3;
+			else if (*test == '\n')
+				control[iter2++] = 4;
 			control[iter2] = 0;
 		}
 	}

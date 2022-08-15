@@ -13,6 +13,8 @@ char *control_converter(int specifier)
 		return ("||");
 	else if (specifier == 3)
 		return (";");
+	else if (specifier == 4)
+		return ("\n");
 	return (NULL);
 }
 
