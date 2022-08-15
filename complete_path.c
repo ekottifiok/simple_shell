@@ -11,6 +11,25 @@ void freed(char *str2, char *str3)
 	free(str3);
 }
 
+char * check_file(char *path)
+{
+	char *delimiter = " ", *buffer, *complete_string;
+	struct stat st;
+
+	if (stat(path, &st) == 0)
+	{
+		complete_string = path;
+		buffer = copy_string_index(path, 0, delimiter);
+		if (buffer)
+		{
+			strcat(complete_string, buffer);
+			free(buffer);
+		}
+		return (complete_string);
+	}
+	return (NULL);
+}
+
 /**
  * complete_path - complete a path based on input
  * @string: the string to be completed
@@ -23,7 +42,7 @@ char *complete_path(char *string, char **environment)
 	*buffer1, *buffer2 = _strdup(string),
 	*complete_string = NULL, *incomplete_path,
 	*delimiter = " ", *path_delimiter = ":";
-	struct stat st;
+
 
 	incomplete_path = strtok(buffer2, delimiter);
 	path = get_env_variable(environment, "PATH");
@@ -40,22 +59,17 @@ char *complete_path(char *string, char **environment)
 		_strcpy(buffer, path_token);
 		_strcat(buffer, "/");
 		_strcat(buffer, incomplete_path);
-		if (stat(buffer, &st) == 0)
-		{
-			complete_string = buffer;
-			buffer1 = copy_string_index(string, 0, delimiter);
-			if (buffer1)
-			{
-				strcat(complete_string, buffer1);
-				free(buffer1);
-			}
+		complete_string = check_file(buffer);
+		if (complete_string)
 			break;
-		}
 		path_token = strtok(NULL, path_delimiter);
 	}
 	freed(path, buffer2);
-	if (complete_string[0] != '\0')
+	if (complete_string && complete_string[0] != '\0')
 		return (complete_string);
-	free(complete_string);
+	if (!complete_string)
+		free(buffer);
+	else
+		free(complete_string);
 	return (NULL);
 }
