@@ -36,5 +36,10 @@ int exit_command(char *string)
 		if (*str_buf2 == '-')
 			result *= -1;
 	}
+	if (result < 0)
+	{
+		fprintf(stderr, "./hsh: 1: exit: Illegal number: %d\n", result);
+		result = 2;
+	}
 	return (result);
 }

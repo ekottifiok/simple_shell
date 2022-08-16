@@ -5,7 +5,7 @@
  * @c: input character
  * Return: int on success
  */
-int _putchar(char c)
+int _putchar(int file_descriptor, char c)
 {
-	return (write(1, &c, 1));
+	return (write(file_descriptor, &c, 1));
 }

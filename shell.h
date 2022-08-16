@@ -63,9 +63,9 @@ int _strcmp(char *s1, char *s2);
 int _strncmp(char *s1, char *s2, int len);
 char *_strdup(char *str);
 ssize_t _getline(char **, size_t *, FILE *);
-int _putchar(char);
+int _putchar(int, char);
 char *_strcat(char *, char *);
-void _puts(char *);
+void _puts(int, char *);
 
 /* new functions */
 int sub_main(char **, int *, char ***, list_t **, char *);

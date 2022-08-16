@@ -4,7 +4,7 @@
  * _puts - prints a string without adding the newline character
  * @str: input string to be printed
  */
-void _puts(char *str)
+void _puts(int file_descriptor, char *str)
 {
 	int i = 0;
 
@@ -12,7 +12,7 @@ void _puts(char *str)
 		return;
 	while (str[i] != '\0')
 	{
-		_putchar(str[i]);
+		_putchar(file_descriptor, str[i]);
 		i++;
 	}
 

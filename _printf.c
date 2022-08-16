@@ -10,6 +10,6 @@ int _printf(char *str)
 	int i;
 
 	for (i = 0; str[i]; i++)
-		_putchar(str[i]);
+		_putchar(STDOUT_FILENO, str[i]);
 	return (0);
 }
