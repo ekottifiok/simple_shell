@@ -15,7 +15,8 @@ int execute_command(char *arguments[], char **environment)
 	pid = fork();
 	if (pid == -1)
 	{
-		perror(sh);
+		if (!isatty(STDIN_FILENO))
+			perror(sh);
 		return (1);
 	}
 
@@ -23,8 +24,8 @@ int execute_command(char *arguments[], char **environment)
 	{
 		if ((execve(arguments[0], arguments, environment)) == 0)
 			exit(0);
-
-		perror(sh);
+		if (!isatty(STDIN_FILENO))
+			perror(sh);
 		exit(1);
 	}
 	else

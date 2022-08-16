@@ -8,7 +8,7 @@
 int *find_control(char *user_input)
 {
 	unsigned int iter1, iter2;
-	char test[5];
+	char test[3];
 	int *control;
 
 	control = malloc(sizeof(int));
@@ -16,16 +16,14 @@ int *find_control(char *user_input)
 	{
 		test[0] = user_input[iter1];
 		test[1] = user_input[iter1 + 1];
-		test[2] = user_input[iter1 + 2];
-		test[3] = user_input[iter1 + 3];
-		test[4] = '\0';
-		if (!_strcmp(test, " && ") || !_strcmp(test, " || ")
+		test[2] = '\0';
+		if (!_strcmp(test, "&&") || !_strcmp(test, "||")
 		|| *test == ';' || *test == '\n')
 		{
 			control = realloc(control, sizeof(int) * (iter2 + 2));
-			if (!_strcmp(test, " && "))
+			if (!_strcmp(test, "&&"))
 				control[iter2++] = 1;
-			else if (!_strcmp(test, " || "))
+			else if (!_strcmp(test, "||"))
 				control[iter2++] = 2;
 			else if (*test == ';')
 				control[iter2++] = 3;

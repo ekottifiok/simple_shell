@@ -24,7 +24,8 @@ int main(int ac __attribute__((unused)),
 		len_user_input = _getline(&user_input, &max_len, stdin);
 		user_input[len_user_input - 1] = '\0';
 
-		if (sub_main(env, &exit_status, &history, &head, user_input) || !isatty(STDIN_FILENO))
+		if (sub_main(env, &exit_status, &history, &head, user_input) ||
+		!isatty(STDIN_FILENO))
 			break;
 
 	}

@@ -62,10 +62,7 @@ int change_directory(char **env, char *string, list_t **head)
 			puts("bash: cd: OLDPWD not set");
 			return (0);
 		}
-		else
-		{
-			puts(path);
-		}
+		puts(path);
 	}
 	if (chdir(path))
 	{
@@ -76,9 +73,7 @@ int change_directory(char **env, char *string, list_t **head)
 		return (1);
 	}
 	set_env_variable(env, "OLDPWD", old_path, head);
-
-		sub_change_directory(old_path, path, env, head);
-
+	sub_change_directory(old_path, path, env, head);
 	if (flag_path)
 		free(path);
 	free(old_path);

@@ -58,3 +58,13 @@
 63	91	1660643802236980544	simple_shell	8c2e7c1e01250f8f
 0	26	1660643845826642519	CMakeFiles/simple_shell.dir/exit_command.c.o	3e4d16ddbe3aedff
 26	45	1660643845846643268	simple_shell	8c2e7c1e01250f8f
+0	27	1660644370259334924	CMakeFiles/simple_shell.dir/shell.c.o	4af367962bf29fe3
+0	38	1660644370271335258	CMakeFiles/simple_shell.dir/execute_command.c.o	8322eb0048513f92
+0	40	1660644370271335258	CMakeFiles/simple_shell.dir/change_directory.c.o	f1d056888dc4d2b9
+40	61	1660644370291335814	simple_shell	8c2e7c1e01250f8f
+0	27	1660644448893490943	CMakeFiles/simple_shell.dir/execute_command.c.o	8322eb0048513f92
+27	49	1660644448917491592	simple_shell	8c2e7c1e01250f8f
+0	26	1660644539831914913	CMakeFiles/simple_shell.dir/execute_command.c.o	8322eb0048513f92
+27	47	1660644539851915439	simple_shell	8c2e7c1e01250f8f
+53	1301	1660682491653653366	CMakeFiles/simple_shell.dir/find_control.c.o	754642b32ef4278e
+1302	1961	1660682492313661151	simple_shell	8c2e7c1e01250f8f
