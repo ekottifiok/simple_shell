@@ -38,7 +38,7 @@ void sub_change_directory(char *old_path,
  */
 int change_directory(char **env, char *string, list_t **head)
 {
-	char *path = NULL, *old_path, *delimiter = " ";
+	char *path = NULL, *old_path, *delimiter = " ", *intro;
 	int flag_path = 0;
 
 	path = strtok(string, delimiter);
@@ -47,6 +47,8 @@ int change_directory(char **env, char *string, list_t **head)
 	if (!path)
 	{
 		path = get_env_variable(env, "HOME");
+		if (!path)
+			return (1);
 		flag_path = 1;
 	}
 	else if (!_strcmp(path, "-"))
@@ -67,7 +69,10 @@ int change_directory(char **env, char *string, list_t **head)
 	}
 	if (chdir(path))
 	{
-		fprintf(stderr, "./hsh: 1: cd: can't cd to %s\n", path);
+		intro = get_env_variable(env, "_");
+		fprintf(stderr, "%s: 1: cd: can't cd to %s\n",
+				intro, path);
+		free(intro);
 		return (1);
 	}
 	set_env_variable(env, "OLDPWD", old_path, head);

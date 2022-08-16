@@ -85,7 +85,7 @@ int print_working_directory(char **, char *, list_t **);
 int echo(char **, char *, list_t **);
 int help(char **, char *, list_t **);
 int print_double_pointer(char **double_ptr);
-int exit_command(char *);
+int exit_command(char **, char *);
 char **copy_double_pointer(char **, int);
 int print_env(char **, char *, list_t **);
 list_t *add_node(list_t **head, int value);

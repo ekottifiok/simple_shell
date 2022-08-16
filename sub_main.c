@@ -25,7 +25,7 @@ int sub_main(char **env, int *exit_status,
 		if (!_strncmp(buffer, "exit", 4) || *buffer == '\0' || *buffer == 3)
 		{
 			exit_continue = 1;
-			*exit_status = exit_command(buffer);
+			*exit_status = exit_command(env, buffer);
 			break;
 		}
 		else if (!_strcmp(buffer, "history") && history)

@@ -5,10 +5,10 @@
  * @string: the string that carries the exit status
  * Return: returns the value of the exit status
  */
-int exit_command(char *string)
+int exit_command(char **env, char *string)
 {
 	unsigned int iteration1, iteration2;
-	char *str_buf2, *delimiter = " ";
+	char *str_buf2, *delimiter = " ", *intro;
 	int  result = 0;
 
 	str_buf2 = strtok(string, delimiter);
@@ -38,7 +38,8 @@ int exit_command(char *string)
 	}
 	if (result < 0)
 	{
-		fprintf(stderr, "./hsh: 1: exit: Illegal number: %d\n", result);
+		intro = get_env_variable(env, "_");
+		fprintf(stderr, "%s: 1: exit: Illegal number: %d\n", intro, result);
 		result = 2;
 	}
 	return (result);
