@@ -39,7 +39,7 @@ typedef struct list
  */
 typedef struct list_s
 {
-	int value;
+	unsigned int value;
 	struct list_s *next;
 } list_t;
 
@@ -88,7 +88,7 @@ int print_double_pointer(char **double_ptr);
 int exit_command(char **, char *);
 char **copy_double_pointer(char **, int);
 int print_env(char **, char *, list_t **);
-list_t *add_node(list_t **head, int value);
+list_t *add_node(list_t **head, unsigned int value);
 void free_list(list_t *head, char **);
 int *find_control(char *user_input);
 user_input_type *add_input_string(user_input_type **, int, char *);

@@ -7,7 +7,7 @@
  * @value: the new str
  * Return: list_t*
  */
-list_t *add_node(list_t **head, int value)
+list_t *add_node(list_t **head, unsigned int value)
 {
 	list_t *newNode;
 
@@ -15,6 +15,7 @@ list_t *add_node(list_t **head, int value)
 	if (!newNode)
 		return (NULL);
 	newNode->value = value;
+	printf("%d\n", value);
 	newNode->next = *head;
 	*head = newNode;
 

@@ -16,10 +16,15 @@ int echo(char **env, char *string,
 	if (*buffer1 == '$')
 	{
 		buffer3 = copy_string_index(buffer1, 1, "$");
-		if (_strcmp(buffer3, "$"))
+		if (*(buffer1 + 1) == '$')
 		{
 			free(buffer3);
 			buffer3 = strdup("MANAGERPID");
+		}
+		else if (!_strcmp(buffer3, "?"))
+		{
+			free(buffer3);
+			buffer3 = strdup("SHLVL");
 		}
 		buffer2 = get_env_variable(env, buffer3);
 		free(buffer1);

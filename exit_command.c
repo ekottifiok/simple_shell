@@ -41,6 +41,7 @@ int exit_command(char **env, char *string)
 		intro = get_env_variable(env, "_");
 		fprintf(stderr, "%s: 1: exit: Illegal number: %d\n", intro, result);
 		result = 2;
+		free(intro);
 	}
 	return (result);
 }

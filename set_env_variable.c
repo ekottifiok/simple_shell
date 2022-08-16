@@ -6,7 +6,7 @@
  * @variable: the variable that should edited
  * @value: the value to be edited in the environment
  * @head: the
- * Return: 0 for success
+ * Return: location of the newly created environment
  */
 int set_env_variable(char **environment, char *variable,
 					 char *value, list_t **head)
@@ -35,5 +35,5 @@ int set_env_variable(char **environment, char *variable,
 	_strcat(environment[iteration], value);
 	if (iteration == size_env)
 		environment[iteration + 1] = NULL;
-	return (0);
+	return (iteration);
 }
