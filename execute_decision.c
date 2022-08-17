@@ -29,7 +29,7 @@ int execute_decision(char *string, char **environment,
 		if (stat(buffer1, &st) == 0)
 		{
 			parsed_string = parse_string(string, " ");
-			if (execute_command(parsed_string, NULL))
+			if (execute_command(parsed_string, environment))
 				success_fail = 1;
 			free_double_pointer(parsed_string);
 		}
