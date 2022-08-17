@@ -41,7 +41,7 @@ int execute_decision(char *string, char **environment,
 		if (complete_string)
 		{
 			parsed_string = parse_string(complete_string, " ");
-			if (execute_command(parsed_string, NULL))
+			if (execute_command(parsed_string, environment))
 				success_fail = 1;
 			free(complete_string);
 			free_double_pointer(parsed_string);

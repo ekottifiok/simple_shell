@@ -37,4 +37,4 @@ add_executable(simple_shell
         add_input_string.c
         free_user_input_type.c
         sub_main.c
-        add_input_history.c remove_whitespace.c _printf.c _strcmp.c _strncmp.c _strdup.c set_env.c unset_env.c _getline.c _putchar.c _puts.c _strcat.c)
+        add_input_history.c remove_whitespace.c _printf.c _strcmp.c _strncmp.c _strdup.c set_env.c unset_env.c _getline.c _putchar.c _puts.c _strcat.c old_work/main.h)

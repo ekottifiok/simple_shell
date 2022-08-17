@@ -11,6 +11,9 @@
 #include <sys/wait.h>
 #include <signal.h>
 #include <stdarg.h>
+#include <limits.h>
+#include <fcntl.h>
+#include <errno.h>
 
 /* custom definitions */
 #define STR_TO_INT(val) (val - 48)
