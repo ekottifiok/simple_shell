@@ -5,7 +5,7 @@
  * @string: the string to be compared
  * Return: the function gotten
  */
-int (*get_builtin_function(char *string))(char **, char *, list_t **)
+int (*get_builtin_function(char *string))(char **, char *, list_t **, char*)
 {
 	char *first_word, *delimiter = " ", *buffer;
 	execute_functions functions[] = {

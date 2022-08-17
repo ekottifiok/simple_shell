@@ -7,10 +7,12 @@
  * @history: history list
  * @head: the changes to the environment variable
  * @user_input: the input by the user
+ * @file_name: carries the file name
  * Return: either 0 to continue or 1 to break
  */
 int sub_main(char **env, int *exit_status,
-			 char ***history, list_t **head, char *user_input)
+			 char ***history, list_t **head, char *user_input,
+			 char *file_name)
 {
 	user_input_type *input, *input_buffer;
 	char *buffer;
@@ -25,7 +27,7 @@ int sub_main(char **env, int *exit_status,
 		if (!_strncmp(buffer, "exit", 4) || *buffer == '\0' || *buffer == 3)
 		{
 			exit_continue = 1;
-			*exit_status = exit_command(env, buffer);
+			*exit_status = exit_command(buffer, file_name);
 			break;
 		}
 		else if (!_strcmp(buffer, "history") && history)
@@ -34,7 +36,7 @@ int sub_main(char **env, int *exit_status,
 		}
 		else
 		{
-			if (execute_decision(buffer, env, &head))
+			if (execute_decision(buffer, env, &head, file_name))
 			{
 				printf("Command '%s' not found\n", buffer);
 				if (input->add_or == 1)

@@ -5,10 +5,12 @@
  * @env: the environment variable
  * @string: the user input string
  * @head: carries the location of the new additions to the env
+ * @file_name: carries the file name
  * Return: 0 for success
  */
 int echo(char **env, char *string,
-		 list_t **head __attribute__((unused)))
+		 list_t **head __attribute__((unused)),
+		 char *file_name)
 {
 	char *buffer1, *buffer2, *buffer3;
 
@@ -27,6 +29,8 @@ int echo(char **env, char *string,
 			buffer3 = strdup("SHLVL");
 		}
 		buffer2 = get_env_variable(env, buffer3);
+		if (!buffer2)
+			_puts(file_name);
 		free(buffer1);
 		free(buffer3);
 		buffer1 = buffer2;

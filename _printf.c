@@ -3,13 +3,16 @@
 /**
  * _printf - prints a string
  * @str: input string
- * Return: returns an int
  */
-int _printf(char *str)
+void _printf(char *str)
 {
-	int i;
+	int i = 0;
 
-	for (i = 0; str[i]; i++)
+	if (!str)
+		return;
+	while (str[i] != '\0')
+	{
 		_putchar(STDOUT_FILENO, str[i]);
-	return (0);
+		i++;
+	}
 }

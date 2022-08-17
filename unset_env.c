@@ -5,9 +5,11 @@
  * @env: the environment variable
  * @string: the user input string
  * @head: carries the location of the new additions to the env
+ * @file_name: carries the file name
  * Return: 0 for success
  */
-int unset_env(char **env, char *string, list_t **head __attribute__((unused)))
+int unset_env(char **env, char *string, list_t **head __attribute__((unused)),
+			  char *file_name __attribute__((unused)))
 {
 	char **data;
 	unsigned int iter, size_env;
@@ -20,7 +22,6 @@ int unset_env(char **env, char *string, list_t **head __attribute__((unused)))
 		fprintf(stderr, "Failed");
 		return (1);
 	}
-
 	for (size_env = 0; env[size_env]; size_env++)
 		;
 

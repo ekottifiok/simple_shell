@@ -2,13 +2,14 @@
 
 /**
  * exit_command - converts the string that carries the exit command
+ * @file_name: carries the file name
  * @string: the string that carries the exit status
  * Return: returns the value of the exit status
  */
-int exit_command(char **env, char *string)
+int exit_command(char *string, char *file_name)
 {
 	unsigned int iteration1, iteration2;
-	char *str_buf2, *delimiter = " ", *intro;
+	char *str_buf2, *delimiter = " ";
 	int  result = 0;
 
 	str_buf2 = strtok(string, delimiter);
@@ -38,10 +39,8 @@ int exit_command(char **env, char *string)
 	}
 	if (result < 0)
 	{
-		intro = get_env_variable(env, "_");
-		fprintf(stderr, "%s: 1: exit: Illegal number: %d\n", intro, result);
+		fprintf(stderr, "%s: 1: exit: Illegal number: %d\n", file_name, result);
 		result = 2;
-		free(intro);
 	}
 	return (result);
 }

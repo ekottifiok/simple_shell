@@ -51,7 +51,7 @@ typedef struct list_s
 typedef struct nameless
 {
 	char *keyword;
-	int (*op)(char **, char *, list_t **);
+	int (*op)(char **, char *, list_t **, char *);
 } execute_functions;
 
 /* custom standard library */
@@ -65,29 +65,24 @@ char *_strdup(char *str);
 ssize_t _getline(char **, size_t *, FILE *);
 int _putchar(int, char);
 char *_strcat(char *, char *);
-void _puts(int, char *);
+void _puts(char *);
+void _printf(char *);
 
 /* new functions */
-int sub_main(char **, int *, char ***, list_t **, char *);
-char *copy_string_index(char *, unsigned int, char*);
+int sub_main(char **, int *, char ***, list_t **, char *, char *);
+char *copy_string_index(char *, unsigned int, char *);
 int add_input_history(char ****, char *);
 int prompt(char **);
 int execute_command(char *[], char **);
-int execute_decision(char *, char **, list_t ***);
+int execute_decision(char *, char **, list_t ***, char *);
 char **parse_string(char *, char *);
 int free_double_pointer(char **);
 char *get_env_variable(char **, char *);
 char *complete_path(char *, char **);
-int (*get_builtin_function(char *))(char **, char *, list_t **);
 int set_env_variable(char **, char *, char *, list_t **);
-int change_directory(char **, char *, list_t **);
-int print_working_directory(char **, char *, list_t **);
-int echo(char **, char *, list_t **);
-int help(char **, char *, list_t **);
 int print_double_pointer(char **double_ptr);
-int exit_command(char **, char *);
+int exit_command(char *, char *);
 char **copy_double_pointer(char **, int);
-int print_env(char **, char *, list_t **);
 list_t *add_node(list_t **head, unsigned int value);
 void free_list(list_t *head, char **);
 int *find_control(char *user_input);
@@ -96,7 +91,20 @@ user_input_type *parse_multiline(char *);
 void free_user_input_type(user_input_type *head);
 ssize_t __getline(char **, size_t *, FILE *);
 char *remove_whitespace(char *string);
-int unset_env(char **, char *, list_t **);
-int set_env(char **, char *, list_t **);
+
+/*
+ * builtin commands
+ */
+int (*get_builtin_function(char *))(char **, char *, list_t **, char *);
+int echo(char **, char *, list_t **, char *);
+int help(char **, char *, list_t **, char *);
+int change_directory(char **, char *, list_t **, char *);
+int print_working_directory(char **, char *, list_t **, char *);
+int unset_env(char **, char *, list_t **, char *);
+int set_env(char **, char *, list_t **, char *);
+int print_env(char **, char *, list_t **, char *);
+
+
+
 
 #endif

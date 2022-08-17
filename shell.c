@@ -16,7 +16,6 @@ int main(int ac __attribute__((unused)),
 	size_t max_len = BUFSIZ, len_user_input;
 	list_t *head = NULL;
 
-	set_env_variable(env, "_", av[0], &head);
 	while (1)
 	{
 		if (isatty(STDIN_FILENO))
@@ -24,7 +23,7 @@ int main(int ac __attribute__((unused)),
 		len_user_input = _getline(&user_input, &max_len, stdin);
 		user_input[len_user_input - 1] = '\0';
 
-		if (sub_main(env, &exit_status, &history, &head, user_input) ||
+		if (sub_main(env, &exit_status, &history, &head, user_input, av[0]) ||
 		!isatty(STDIN_FILENO))
 			break;
 

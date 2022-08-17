@@ -5,20 +5,21 @@
  * @string: the user input string
  * @environment: environment variable
  * @head: the head list carries the changes to environment
+ * @file_name: carries the file name
  * Return: 0 success
  */
-int execute_decision(char *string, char **environment, list_t ***head)
+int execute_decision(char *string, char **environment,
+					 list_t ***head, char *file_name)
 {
 	struct stat st;
 	char *buffer1, *buffer2, *complete_string, *delimiter = " ", **parsed_string;
-	int (*builtin_commands)(char **, char *, list_t **) = NULL, success_fail = 0;
-	/*
-	 * Returns first path_token
-	 */
+	int (*builtin_commands)(char **, char *, list_t **, char *) = NULL,
+	success_fail = 0;
+
 	builtin_commands = get_builtin_function(string);
 	if (builtin_commands)
 	{
-		if (!builtin_commands(environment, string, *head))
+		if (!builtin_commands(environment, string, *head, file_name))
 			return (0);
 	}
 	else if (string[0] == '/' || (string[0] == '.' && string[1] == '/'))

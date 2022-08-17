@@ -5,9 +5,11 @@
  * @env: the environment variable
  * @string: the user input string
  * @head: carries the location of the new additions to the env
+ * @file_name: carries the file name
  * Return: 0 for success
  */
-int set_env(char **env, char *string, list_t **head
+int set_env(char **env, char *string, list_t **head,
+			char *file_name __attribute__((unused))
 ) {
 	char **data;
 	unsigned int iter;

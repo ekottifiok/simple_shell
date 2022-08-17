@@ -34,11 +34,12 @@ void sub_change_directory(char *old_path,
  * @env: the global environment variable
  * @string: string inputted by user
  * @head: carries the environment variable that was edited
+ * @file_name: carries the file name
  * Return: 0 success and -1 failure
  */
-int change_directory(char **env, char *string, list_t **head)
+int change_directory(char **env, char *string, list_t **head, char *file_name)
 {
-	char *path = NULL, *old_path, *delimiter = " ", *intro;
+	char *path = NULL, *old_path, *delimiter = " ";
 	int flag_path = 0;
 
 	path = strtok(string, delimiter);
@@ -66,10 +67,8 @@ int change_directory(char **env, char *string, list_t **head)
 	}
 	if (chdir(path))
 	{
-		intro = get_env_variable(env, "_");
 		fprintf(stderr, "%s: 1: cd: can't cd to %s\n",
-				intro, path);
-		free(intro);
+				file_name, path);
 		return (1);
 	}
 	set_env_variable(env, "OLDPWD", old_path, head);

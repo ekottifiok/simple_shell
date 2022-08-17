@@ -15,7 +15,6 @@ list_t *add_node(list_t **head, unsigned int value)
 	if (!newNode)
 		return (NULL);
 	newNode->value = value;
-	printf("%d\n", value);
 	newNode->next = *head;
 	*head = newNode;
 

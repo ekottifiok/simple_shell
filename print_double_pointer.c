@@ -11,7 +11,6 @@ int print_double_pointer(char **double_ptr)
 	unsigned int iteration;
 
 	for (iteration = 0; double_ptr[iteration] != NULL; iteration++)
-		printf("%d: %s\n", iteration, double_ptr[iteration]);
-
+		_puts(double_ptr[iteration]);
 	return (0);
 }
