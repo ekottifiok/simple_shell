@@ -22,23 +22,15 @@ int execute_command(char *arguments[], char **environment)
 
 	else if (pid == 0)
 	{
-		if ((execve(arguments[0], arguments, environment)) == -1)
-		{
-			if (!isatty(STDIN_FILENO))
-				perror(sh);
-			if (errno == EACCES)
-				exit(126);
-			exit(1);
-		}
+		if ((execve(arguments[0], arguments, environment)) == 0)
+			exit(0);
+		if (!isatty(STDIN_FILENO))
+			perror(sh);
+		exit(1);
 	}
 	else
 	{
-		wait(&status);
-		if (WIFEXITED(status))
-		{
-			status = WEXITSTATUS(status);
-			if (status == 126)
-				puts("Permission Denied");
-		}
+		waitpid(-1, &status, 0);
+		return (WEXITSTATUS(status));
 	}
 }
