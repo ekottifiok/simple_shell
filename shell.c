@@ -11,7 +11,7 @@ int main(int ac __attribute__((unused)),
 		 char **av,
 		 char **env)
 {
-	int exit_status = 2;
+	int exit_status = 0;
 	char **history = NULL, *user_input = NULL;
 	size_t max_len = BUFSIZ, len_user_input;
 	list_t *head = NULL;
